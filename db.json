@@ -1,0 +1,92 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ali Jan",
+      "username": "Barat",
+      "email": "barat@example.com",
+      "phone": "123456789",
+      "website": "http://example.com"
+    },
+    {
+      "id": 2,
+      "name": "Ahmad Wali",
+      "username": "Wali123",
+      "email": "wali@example.com",
+      "phone": "987654321",
+      "website": "http://wali.com"
+    },
+    {
+      "id": 3,
+      "name": "Sara Gul",
+      "username": "SaraG",
+      "email": "sara@example.com",
+      "phone": "456123789",
+      "website": "http://saragul.com"
+    },
+    {
+      "id": 4,
+      "name": "Nabi Jaan",
+      "username": "NabiJ",
+      "email": "nabi@example.com",
+      "phone": "789456123",
+      "website": "http://nabijaan.com"
+    },
+    {
+      "id": 5,
+      "name": "Faisal Rahimi",
+      "username": "FaisalR",
+      "email": "faisal@example.com",
+      "phone": "321654987",
+      "website": "http://rahimi.com"
+    },
+    {
+      "id": 6,
+      "name": "Jamila Noor",
+      "username": "JamilaN",
+      "email": "jamila@example.com",
+      "phone": "159753468",
+      "website": "http://noor.com"
+    },
+    {
+      "id": 7,
+      "name": "Haseeb Khan",
+      "username": "HaseebK",
+      "email": "haseeb@example.com",
+      "phone": "852369741",
+      "website": "http://khan.com"
+    },
+    {
+      "id": 8,
+      "name": "Farzana Omari",
+      "username": "FarzanaO",
+      "email": "farzana@example.com",
+      "phone": "753159486",
+      "website": "http://omari.com"
+    },
+    {
+      "id": 9,
+      "name": "Qais Ahmad",
+      "username": "QaisA",
+      "email": "qais@example.com",
+      "phone": "963258741",
+      "website": "http://qaisahmad.com"
+    },
+    {
+      "id": 10,
+      "name": "Razia Sultana",
+      "username": "RaziaS",
+      "email": "razia@example.com",
+      "phone": "147852369",
+      "website": "http://sultana.com"
+    },
+    {
+      "id": "aee8",
+      "name": "Anwar Mohammadi",
+      "username": "dd",
+      "email": "ali@gmail.com",
+      "phone": "342",
+      "website": "kabul"
+    }
+  ]
+}
