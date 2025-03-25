@@ -1,15 +1,26 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:3000/users")
+      .get("http://localhost:3000/users/")
       .then((response) => setData(response.data))
       .catch((error) => console.error(error));
   }, []);
+
+  const handleDelete = (id) => {
+    const confirm = window.confirm("Are you sure you want to delete");
+    if (confirm) {
+      axios.delete("http://localhost:3000/users/" + id).then((res) => {
+        navigate("/");
+      })
+      .catch(err = console.log(err));
+    }
+  };
   return (
     <div className="min-h-[100vh] flex flex-col items-center justify-center bg-amber-100">
       <h1 className="text-3xl font-bold text-center pb-10">List of Users</h1>
@@ -49,9 +60,7 @@ const Home = () => {
               <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">
                 Phone
               </th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">
-                Web Site
-              </th>
+
               <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">
                 Actions
               </th>
@@ -72,17 +81,24 @@ const Home = () => {
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {user.phone}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {user.website}
-                </td>
+
                 <td className="px-6 py-4 flex gap-x-4 whitespace-nowrap text-sm text-gray-500">
-                  <button className="bg-sky-700 cursor-pointer hover:scale-95 transition-transform duration-300 py-1 px-4 rounded-md text-white">
+                  <Link
+                    to={`/read/${user.id}`}
+                    className="bg-sky-700 cursor-pointer hover:scale-95 transition-transform duration-300 py-1 px-4 rounded-md text-white"
+                  >
                     Read
-                  </button>
-                  <button className="bg-green-700 cursor-pointer hover:scale-95 transition-transform duration-300 py-1 px-4 rounded-md text-white">
+                  </Link>
+                  <Link
+                    to={`/update/${user.id}`}
+                    className="bg-green-700 cursor-pointer hover:scale-95 transition-transform duration-300 py-1 px-4 rounded-md text-white"
+                  >
                     Edit
-                  </button>
-                  <button className="bg-red-700 cursor-pointer hover:scale-95 transition-transform duration-300 py-1 px-4 rounded-md text-white">
+                  </Link>
+                  <button
+                    onClick={() => handleDelete(user.id)}
+                    className="bg-red-700 cursor-pointer hover:scale-95 transition-transform duration-300 py-1 px-4 rounded-md text-white"
+                  >
                     Delete
                   </button>
                 </td>
