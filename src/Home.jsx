@@ -24,7 +24,7 @@ const Home = () => {
     }
   };
 
-  // Filter users based on search query
+ 
   const filteredUsers = data.filter((user) =>
     user.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
